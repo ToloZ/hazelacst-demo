@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast
+        xsi:schemaLocation="http://www.hazelcast.com/schema/config http://www.hazelcast.com/schema/config/hazelcast-config.xsd"
+        xmlns="http://www.hazelcast.com/schema/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <network>
+        <join>
+            <multicast enabled="false"></multicast>
+            <tcp-ip enabled="true">
+            </tcp-ip>
+        </join>
+    </network>
+    <!-- java -jar hazelcast-mancenter-3.12.1.war 8080 hazelcast-mancenter -->
+    <management-center enabled="true" update-interval="3">
+        http://localhost:8081/hazelcast-mancenter
+    </management-center>
+
+    <map name="default">
+        <max-size>1</max-size>
+        <eviction-policy>LFU</eviction-policy>
+        <time-to-live-seconds>10</time-to-live-seconds>
+    </map>
+
+    <!--
+
+        <map name="paises">
+            <max-size>200</max-size>
+            <eviction-policy>LFU</eviction-policy>
+            <time-to-live-seconds>60</time-to-live-seconds>
+        </map>
+
+        <map name="provincia">
+            <max-size>200</max-size>
+            <eviction-policy>LFU</eviction-policy>
+            <time-to-live-seconds>60</time-to-live-seconds>
+        </map>
+    -->
+</hazelcast>
