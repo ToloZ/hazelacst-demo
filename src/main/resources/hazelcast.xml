@@ -7,6 +7,7 @@
         <join>
             <multicast enabled="false"></multicast>
             <tcp-ip enabled="true">
+                <interface>127.0.0.1</interface>
             </tcp-ip>
         </join>
     </network>
@@ -16,19 +17,16 @@
     </management-center>
 
     <map name="default">
-        <max-size>1</max-size>
+        <max-size>10</max-size>
+        <eviction-policy>LFU</eviction-policy>
+    </map>
+
+    <map name="paises">
         <eviction-policy>LFU</eviction-policy>
         <time-to-live-seconds>10</time-to-live-seconds>
     </map>
 
     <!--
-
-        <map name="paises">
-            <max-size>200</max-size>
-            <eviction-policy>LFU</eviction-policy>
-            <time-to-live-seconds>60</time-to-live-seconds>
-        </map>
-
         <map name="provincia">
             <max-size>200</max-size>
             <eviction-policy>LFU</eviction-policy>

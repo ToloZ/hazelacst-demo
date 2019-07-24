@@ -1,5 +1,7 @@
 package com.hazelcast.demo;
 
+import com.hazelcast.core.Hazelcast;
+import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.demo.entity.Pais;
 import com.hazelcast.demo.entity.Provincia;
 import com.hazelcast.demo.repository.PaisRepository;
@@ -22,6 +24,8 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
+		HazelcastInstance hz1 = Hazelcast.newHazelcastInstance();
+		HazelcastInstance hz2 = Hazelcast.newHazelcastInstance();
 	}
 
 

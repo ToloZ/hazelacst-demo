@@ -18,11 +18,6 @@ public class HazelcastConfiguration {
     @Bean
     public Config hazelCastConfig() {
         Config config = new XmlConfigBuilder(getClass().getClassLoader().getResourceAsStream("hazelcast.xml")).build();
-        config.getNetworkConfig().getJoin().getTcpIpConfig().addMember(Hazelcast.newHazelcastInstance());
-        HazelcastInstance hz1 = Hazelcast.newHazelcastInstance(config);
-        HazelcastInstance hz2 = Hazelcast.newHazelcastInstance(config);
-        HazelcastInstance hz3 = Hazelcast.newHazelcastInstance(config666);
-
         return config;
     }
 

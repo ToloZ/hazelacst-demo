@@ -21,7 +21,7 @@ public class Pais implements Serializable {
     @Column(name = "descripcion", length = 250, nullable = false)
     private String descripcion;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "c_pais", referencedColumnName = "c_pais")
     private List<Provincia> provincias;
 
