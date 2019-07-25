@@ -32,4 +32,15 @@ public class Controller {
     public ResponseEntity<List<Provincia>> getProvinciasByPais(@RequestParam("idPais") Short idPais) {
         return ResponseEntity.ok().body(provinciaService.getProvinciasById(idPais));
     }
+    
+    @GetMapping("deletePais")
+    public ResponseEntity<Boolean> deletePais(@RequestParam("idPais") Short idPais) {
+        return ResponseEntity.ok().body(paisService.deletePais(idPais));
+    }
+    
+    @GetMapping("updatePais")
+    public ResponseEntity<Pais> updatePais(@RequestParam("idPais") Short idPais, @RequestParam("descripcion") String descripcion) {
+        return ResponseEntity.ok().body(paisService.updatePais(idPais, descripcion));
+    }
+    
 }
